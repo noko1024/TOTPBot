@@ -1,0 +1,5 @@
+discord.py
+pyotp
+python-dotenv
+SQLAlchemy
+
