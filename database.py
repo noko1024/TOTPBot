@@ -12,6 +12,7 @@ class TOTPlog(Base):
     __tablename__ = 'TOTPUsed'
     id = Column(Integer, primary_key=True,autoincrement=True)
     user_id = Column(Integer)
+    user_name = Column(String)
     generated_totp = Column(String)
     created_at = Column(
         DateTime(timezone=True), nullable=False, server_default=sqlalchemy.func.now()
