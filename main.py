@@ -33,7 +33,7 @@ async def on_ready():
 
 @tree.command(name="totp", description="6桁のワンタイムパスワードを取得します")
 async def totp(interaction: discord.Interaction):
-    await interaction.response.defer()
+    await interaction.response.defer(ephemeral=True)
     one_time_password = totp_generate.now()
     time_remaining = totp_generate.interval - datetime.datetime.now().timestamp() % totp_generate.interval
     if time_remaining <= 5:
