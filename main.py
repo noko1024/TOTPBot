@@ -26,7 +26,7 @@ totp_generate = pyotp.TOTP(TOTP_TOKEN)
 @client.event
 async def on_ready():
     await tree.sync()
-    print('MIKUnity TOTP Ready!')
+    print('TOTP Ready!')
 
 @tree.command(name="totp",description="6桁のワンタイムパスワードを取得します")
 async def totp(interaction:discord.Interaction):
