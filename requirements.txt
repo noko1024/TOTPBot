@@ -2,4 +2,4 @@ discord.py
 pyotp
 python-dotenv
 SQLAlchemy
-audioop-lts
+alembic
