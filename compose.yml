@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  totpbot:
+    build: .
+    container_name: totpbot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - OWNER_ID=${OWNER_ID}
+    volumes:
+      # データベースファイルを永続化
+      - ./TOTPlog.db:/app/TOTPlog.db
+      # Alembicマイグレーション用
+      - ./alembic:/app/alembic:ro
+      - ./alembic.ini:/app/alembic.ini:ro
+    networks:
+      - totpbot-network
+
+networks:
+  totpbot-network:
+    driver: bridge
